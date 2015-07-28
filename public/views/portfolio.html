@@ -1,0 +1,51 @@
+<div class='wrapper' ng-class='portfolioBackground'>
+	<header>
+	    <div class='rope'></div>
+	    <div class='logo'><img src='img/logo.png' alt='logo'></div>
+	    <div class='message'>
+	    	<h2>
+	    		Animator.<br>Illustrator.<br>Rock Climber.<br>Cheese Lover. 
+	    	</h2>
+	    </div>
+	    <nav>
+			<ul class='menu'>
+				<li class='first active'><a ng-href='/#/portfolio'><h2>Portfolio</h2></a></li>
+				<li class='second'><a ng-href='/#/portfolio'><h2>About me + Contact</h2></a></li>
+	             <!-- <li class='third'><span><img src='img/twitter.png' alt='twitter'> <img src='img/vimeo.png' alt='vimeo'> <img src='img/linkedin.png' alt='linkedin'></span></li> -->
+	 		</ul>
+ 		</nav>
+   	</header>
+ 	
+
+ 	<div class="tagsWrapper">
+		<button class="tagsToggle">{{ showTags() }}<span class="fa fa-caret-down"></span><span class="fa fa-bars"></span></button>
+		<ul class='tags'>
+			<li class='tag' data-color='#44D2A0' ng-class='active[1] ? "active" : "inactive"' ng-click='toggleTag(1,"animation")'><h1>Animation</h1><div class='checkbox' ng-class='active[1] ? "active fa fa-check" : ""'></div></li>
+			<li class='tag' data-color='#80fc7a' ng-class='active[2] ? "active" : "inactive"' ng-click='toggleTag(2,"illustration")'><h1>Illustration</h1><div class='checkbox' ng-class='active[2] ? "active fa fa-check" : ""'></div></li>
+			<li class='tag' data-color='#FF8A52' ng-class='active[3] ? "active" : "inactive"' ng-click='toggleTag(3,"design")'><h1>Design</h1><div class='checkbox' ng-class='active[3] ? "active fa fa-check" : ""'></div></li>
+			<li class='tag' data-color='#F34E77' ng-class='active[4] ? "active" : "inactive"' ng-click='toggleTag(4,"motion_graphics")'><h1>Motion Graphics</h1><div class='checkbox' ng-class='active[4] ? "active fa fa-check" : ""'></div></li>
+			<li class='tag' data-color='#a26cf3' ng-class='active[5] ? "active" : "inactive"' ng-click='toggleTag(5,"character_design")'><h1>Character Design</h1><div class='checkbox' ng-class='active[5] ? "active fa fa-check" : ""'></div></li>
+			<li class='tag' data-color='#78a6f9' ng-class='active[6] ? "active" : "inactive"' ng-click='toggleTag(6,"storyboard")'><h1>Storyboard</h1><div class='checkbox' ng-class='active[6] ? "active fa fa-check" : ""'></div></li>
+		</ul>
+	</div>
+
+
+	<div class='portfolio' ng-class='portfolioBackground'>
+		<div class="projectWrapper" ng-repeat='project in projects | filterByTags:tags' ng-click="goToProject( project.title.split(' ').join('_') ,  tags.join('+') )">
+			<img ng-src='img/portfolio/{{ project.portfolioImg }}' alt='{{project.title}}' />
+			<div class='projectInfoWrapper'>
+				<div class="projectTitle"><h2>{{ project.title }}</h2></div>
+				<div class="projectTagsWrapper" ng-class='portfolioBackground'>
+					<span class='projectTags {{tag}}' ng-repeat='tag in project.tags'>{{tag}}</h5>
+				</div>
+			</div>
+		</div>			
+	</div>
+
+
+
+</div>
+
+
+
+

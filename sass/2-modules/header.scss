@@ -1,0 +1,45 @@
+header{
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-align-items:center;
+	-ms-flex-align:center;
+	align-items:center;
+	.logo{
+		margin-right:5px;
+	}
+	.message{
+		h2{
+			font-size:0.8em;
+			font-weight:200;
+			letter-spacing:1px;
+		}
+	}
+	nav{
+		margin-left:auto;
+		.menu{
+			display:-webkit-flex;
+			display:-ms-flexbox;
+			display:flex;
+
+			li{
+				margin-right:30px;
+				&:last-child{
+					margin-right:0;
+				}
+				&.active{
+					border-bottom:2px solid $action-color;
+					a{
+						color:$action-color;
+					}
+				}
+				h2{
+					margin-bottom:5px;
+				}
+			}
+		}
+
+	}
+
+
+}

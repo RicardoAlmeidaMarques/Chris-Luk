@@ -1,0 +1,76 @@
+.tagsWrapper{
+	@include row();
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-justify-content:flex-end;
+	    -ms-flex-pack:end;
+	        justify-content:flex-end;
+}
+
+.tagsToggle{	
+	
+	margin-right:20px;
+	height:40px;
+	text-align:center;
+	padding:5px 10px;
+	border-radius:10px 10px 0 0;
+	cursor:pointer;
+
+	&:focus {outline:0;}
+	span{
+		margin-right:10px;
+		font-size:0.90em;
+		&:last-child{
+			margin-right:0;
+		}
+		&.fa{
+			font-size:1.3em;
+		}
+	}
+}
+
+
+.tags{
+
+
+	.tag{
+		cursor:pointer;
+		display:-webkit-flex;
+		display:-ms-flexbox;
+		display:flex;
+		-webkit-align-items:center;
+		    -ms-flex-align:center;
+		        align-items:center;
+        -webkit-justify-content:flex-end;
+            -ms-flex-pack:end;
+                justify-content:flex-end;
+		padding:15px 0px 15px 15px;
+		box-sizing:border-box;
+		@include user-select(none);
+		&.inactive{
+			background: $lighter-gray;
+		}
+		&.active{
+			h1{
+				color:white;
+			}
+			background:$hot-pink;
+		}
+
+		h1{
+			margin:0 0 0 5px;
+		}
+
+		.checkbox{
+			width:20px;
+			height:20px;
+			border-radius:3px;
+			background:$dark-gray;
+			color:white;
+			font-size:1.2em;
+		}
+
+	}
+
+}

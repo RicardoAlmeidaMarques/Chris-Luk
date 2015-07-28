@@ -1,0 +1,39 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Chris' portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RicardoAlmeidaMarques/Chris-Luks-Portfolio.git"
+  },
+  "author": "Ricardo Marques",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RicardoAlmeidaMarques/Chris-Luks-Portfolio/issues"
+  },
+  "devDependencies": {
+    "load-grunt-tasks": "^3.2.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "browser-sync": "^2.7.13",
+    "express": "^4.13.0",
+    "express-session": "^1.11.3",
+    "fs": "0.0.2",
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^1.0.0",
+    "html-parser": "^0.8.0",
+    "mongoose": "^4.0.6",
+    "nodemailer": "^1.4.0",
+    "passport": "^0.2.2",
+    "passport-local": "^1.0.0",
+    "path": "^0.11.14",
+    "serve-favicon": "^2.3.0"
+  }
+}

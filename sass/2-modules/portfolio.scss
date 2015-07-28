@@ -1,0 +1,27 @@
+.portfolio{
+  line-height: 0;
+  -webkit-column-count:3;
+     -moz-column-count:3;
+          column-count:3;
+   -moz-column-fill: auto; /* Firefox */
+    -webkit-column-fill: auto;
+           column-fill: auto;
+
+
+}
+
+.projectWrapper{
+    width: 100% !important;
+    height: auto !important;
+  
+
+    img{
+
+    }
+    .projectInfoWrapper{
+        .projectTags{
+          
+        }
+    }  
+}
+
