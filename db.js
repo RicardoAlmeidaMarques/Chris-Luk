@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 require('./models/portfolio');
 require('./models/user');
+require('./models/about_me');
 var express = require('express');
 var router = express.Router();
 

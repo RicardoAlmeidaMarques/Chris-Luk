@@ -1,23 +1,26 @@
 <!doctype html>
-  <html>
-  <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8" />
-    <title>Chris Luk</title>
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
-  <!--   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
-  </head>
-  <body>
+  <html ng-app="displayPortfolio">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="utf-8" />
+      <meta name="description" content="Chris Luk is an animator, illustrator, rock climber and cheese lover, living and working in London, specializing in both traditional and digital mediums, creating a variety work for illustration,motion graphics, pre-production and animated shorts.">
+      <title>Chris Luk</title>
+      <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-touch.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+      <script src="http://code.angularjs.org/1.4.2/angular-animate.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script> 
+      <script src="vendor/imagesloaded.js"></script>
+      <script src="vendor/angular-masonry.js"></script> 
+      <script src="vendor/ng-infinite-scroll.min.js"></script>
+      <script src="js/portfolio_app.js"></script> 
+    </head>
+    <body>
 
-    
-    <div data-ui-view ng-app="displayPortfolio" ng-cloak></div>
+      <div ui-view ng-cloak></div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-    <script src="http://code.angularjs.org/1.4.2/angular-animate.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script> 
-    <script src="js/angularApp.js"></script> 
-  </body>
+    </body>
   </html>

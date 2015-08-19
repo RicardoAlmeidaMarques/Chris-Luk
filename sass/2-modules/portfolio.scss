@@ -1,27 +1,113 @@
-.portfolio{
-  line-height: 0;
-  -webkit-column-count:3;
-     -moz-column-count:3;
-          column-count:3;
-   -moz-column-fill: auto; /* Firefox */
-    -webkit-column-fill: auto;
-           column-fill: auto;
-
-
-}
-
-.projectWrapper{
-    width: 100% !important;
-    height: auto !important;
-  
-
-    img{
-
+.tags-indicator{
+  background:$hot-pink;
+  text-align:left;
+  color:white;
+  font-size:1.5em;
+  @include user-select(none);
+  cursor:default;
+  padding:20px;
+  min-height:170px;
+  width:100%;
+  position:relative;
+  .tags-display2{
+    position:relative;
+    width:100%;
+    top:50%;
+    @include transform(translate(0%,0%));
+    font-size:0.7em;
+  }
+  h2{
+    font-size:2.7em;
+    position:absolute;
+    top:50%;
+    width:200px;
+    width:200px;
+    left:30px;
+    @include transform(translate(0%,-50%));
+    @include transition(opacity 100ms ease-in-out);
+  }
+  i{
+    padding:5px;
+    font-style:normal;
+    display:block;
+    text-align:right;
+    opacity:0.3;
+    @include transition(opacity 100ms ease-in-out);
+    cursor:pointer;
+     &.active{
+      font-weight:bold;
+      opacity:0.9;
     }
-    .projectInfoWrapper{
-        .projectTags{
-          
+  }
+  &:hover{
+    h2{
+      opacity:0.3;
+    }
+    .tags-display2{
+      i{
+        opacity:0.8;
+        &.active{
+          opacity:1;
         }
-    }  
+      }
+    }
+  }
 }
 
+.tile { 
+  cursor:pointer;
+  .projectInfoWrapper{
+    position:absolute;
+    overflow:hidden;
+    background:rgba(15,200,255,0.7);
+    .projectTitle{
+      text-transform:capitalize;  
+      position:absolute;
+      font-size:30px;
+      padding:0px 15px;
+      bottom:50%;
+      left:50%;
+      @include transform(translate(-50%,-5px));
+      display:inline-block;
+      text-align:center;
+      h2{
+        color:white;
+        margin:0;
+      }
+    }
+    .project-link{
+      position:absolute;
+      top:50%;
+      left:50%;
+      @include transform(translate(-50%,5px));
+      background:white;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      box-shadow: 0px 0px 1px 1px rgba(255,255,255,0.1);
+      @include transition(all 100ms ease-in-out);
+      i{
+        color:black;
+        position:absolute;
+        top:50%;
+        left:50%;
+        @include transform(translate(-50%,-50%));
+        font-size:25px;
+      }
+    }
+    .projectTagsWrapper{
+      position:relative;
+    }
+  }
+  &:first-of-type{
+    z-index:10;
+  }
+ }
+
+
+.tile img { 
+    width:100%; 
+    height:100%;
+    margin:0;
+    padding:0;
+}

@@ -1,4 +1,4 @@
-<div class='projectShowcase' ng-cloak>
+<div class='projectShowcase' ng-cloak ng-swipe-left="goToNextProject(nextProject.title)" ng-swipe-right="goToPreviousProject(previousProject.title)">
 	<div class='loadingBar animated' ng-class='load'></div>
 	<div id='projectContents' class='projectContents' >
 		<div class='projectControlsWrapper'>
@@ -10,15 +10,15 @@
 		</div>
 		<div class='infoWrapper animated' ng-class='currentProjectClass'>
 			<div class='info fadeIn'>
-				<div class='projectTitle'>-{{currentProject.title}}</div>
-				<div class='projectDescription'>{{currentProject.description}}</div>
-				<div class='projectTags'>tags: <li ng-repeat='tag in tags'><a ng-href="#/portfolio/{{tag.split(' ').join('_')}}">{{tag}}</a></li></div>
+				<div class='projectTitle'>{{currentProject.title}}</div>
+				<div class='projectDescription'><pre>{{currentProject.description}}</pre></div>
+				<div class='projectTags'><li ng-repeat='tag in tags'><a ng-href="#/portfolio/{{tag.split(' ').join('_')}}">#{{tag}}</a></li></div>
 				<div class='thumbnails'>
-					<div ng-if='videoThumbnail' ng-click='playVideo()' class='thumbnail videoThumbnail active' style='background-image:url("{{videoThumbnail}}")' data-source="{{videoLink}}">
+					<div ng-if='videoThumbnail' class='thumbnail videoThumbnail active' style='background-image:url("{{videoThumbnail}}")' data-source="{{videoLink}}">
 						<img src='/img/play.svg' alt='video'>
 						<div class='playButtonBg'></div>
 					</div>
-					<div ng-repeat='image in images' ng-if='image' class='thumbnail' style='background-image:url("img/portfolio/{{image}}")' data-source="{{image}}">
+					<div ng-repeat='image in images' ng-if='image' class='thumbnail' style='background-image:url("{{image}}")' data-source="{{image}}">
 					</div>
 				</div>
 			</div>
@@ -26,9 +26,16 @@
 		<div class='projectContent animated' ng-class='currentProjectClass'>
 			<div class='mediaWrapper fadeIn'>
 				<div ng-if="videoLink" class='videoWrapper'>
-					<iframe class='fadeIn' ng-src="{{trustSrc(videoLink)}}" frameborder="0" data-source="{{videoLink}}" width='250' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					<iframe class='fadeIn' ng-src="{{trustSrc(videoLink)}}" frameborder="0" data-source="{{videoLink}}" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				</div>
-				<img ng-if='image' ng-repeat='image in images' class='thumbnail animated' ng-src='img/portfolio/{{image}}' data-source="{{image}}" />
+				<img ng-if='image' ng-repeat='image in images' class='thumbnail animated' ng-src='{{image}}' data-source="{{image}}" />
+			</div>
+		</div>
+		<div class='projectControlsWrapper bottom'>
+			<div class="projectControls">
+				<img id='previousProject' src='/img/back.svg' ng-click='goToPreviousProject(previousProject.title)' ng-show='previousProject' alt="previous"/>
+				<img id='backToPortfolio' src='/img/menu.svg' ng-click='goToPortfolio()' alt="back to portfolio"/>
+				<img id='nextProject' src='/img/forward.svg' ng-click='goToNextProject(nextProject.title)' ng-show='nextProject' alt="next"/>
 			</div>
 		</div>
 	</div>

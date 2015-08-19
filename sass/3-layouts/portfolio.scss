@@ -1,112 +1,194 @@
+html{
+	position:relative;
+	overflow-y:scroll;
+}
+
 .wrapper{
 	@include outer-container(1300px);
-}
-
-
-header{
-	padding:20px;
-}
-
-
-.tagsWrapper{
 	position:relative;
-	border-bottom:1px solid rgba(0,0,0,0.1);
-	&.active{
-		.tags{
-			max-height:500px;
-		}
-	}
+	padding:0px 20px 0;
 }
 
-.tags{
-	position:absolute;
-	top:40px;
-	right:20px;
-	z-index:1;
-	max-height:0;
-	overflow:hidden;
-	width:300px;
-	@include transition(max-height 200ms ease-in-out);
-	.tag{
-		width:300px;
-		border-bottom:1px solid rgba(0,0,0,0.1);
-		box-sizing:border-box;
-		margin-left:auto;
-		&:first-child{
-			border-radius:10px 0px 0 0;
-		}
-		&:last-child{
-			border-bottom:0;
-			border-radius:0 0 10px 10px;
-		}
-		.checkbox{
-			position:relative;
-			margin-right:15px;
-			margin-left:10px;
-		}
-	}	
-}	
+
+.hide{
+	opacity:0;
+	pointer-events:none;
+	overflow-y:hidden;
+}
+
+.copyright{
+	position:fixed;
+	left:0;
+	top:50%;
+	@include transform(rotate(90deg) translate(0%,90px));
+	font-size:0.8em;
+}
+
 
 .portfolio{
-	@include span-columns(12);
-	padding:20px;
+	position:relative;
+	padding-top:20px;
 }
 
-.projectWrapper{
-	margin-bottom:10px;
+.tags-display3{
+	display:none;
+	font-size:0.9em;
+	padding:0px 30px;
+	i{
+		display:inline-block;
+		color:white;
+		opacity:1;
+	}
+
+}
+
+.tile { 
+	width:32.34%;
+	margin:0.43% 0.5% 0.7%;
 	overflow:hidden;
-	border-radius:2px;
-	cursor:pointer;
-	transform:translateZ(0);
+	-webkit-transform:translateZ(0);
+	        transform:translateZ(0);
 	img{
 		width:100%;
+		overflow:hidden;
+		margin-bottom:-7px;
+		@include transition(transform 0.1s linear);
 	}
 	.projectInfoWrapper{
-		-webkit-transform:translateY(100%);
-		transform:translateY(100%);
-		position:absolute;
-		right:0;
-		left:0;
-		top:50;
-		padding:15px 15px 15px;
-    	background:$hot-pink;
-		color:white;
-		overflow:hidden;
-		@include transition(all 200ms);
-		.projectTitle{
-			text-transform:capitalize;	
-			position:relative;
-			border-bottom:1px solid rgba(0,0,0,0.1);
-		}
-		.projectTagsWrapper{
-			font-size:0.9em;	
-			line-height:1.2em;
-			position:relative;
-			padding:12px 0px 5px;
-			border-top:1px solid rgba(255,255,255,0.2);
-			.projectTags{	
-				margin:0 5px 0 0;
-				&::after{
-					content:'/';
-				}
-				&:last-of-type{
-					&::after{
-						content:none;
-					}
-				}
-			}
-		}
-
+		bottom:0;
+		top:0;
+		width:100%;	
+		opacity:0;
+		@include transition(all 100ms ease-in-out);
 	}
 	&:hover{
-		.projectInfoWrapper{
-			bottom:0;
-			-webkit-transform:translateY(0%);
-		    transform:translateY(0%);
-				 	
+		img{
+			@include transition(transform 7s linear);
+			@include transform(scale(1.2));
+			@include filter(grayscale(100%));
 		}
+		.projectInfoWrapper{
+			opacity:1;
+		}
+	}
+	.project-link{
+		&:hover{
+			box-shadow:0 0 1px 1px #f51f56;
+			background:$hot-pink;
+			i{
+				color:white;
+			}
+	
+		}
+	}
+ }
 
+
+ @media all and (max-width: 1320px){
+
+ 	.wrapper{
+ 		padding:0 40px;
+ 	}
+
+ 	.tile { 
+		width:32.35%;
+		margin:0.43% 0.5% 0.7%;
+		border-radius:2px;
 	}
 
+}
+
+@media all and (max-width:1170px){
+	.tile{
+		width:49%;
+	}
+}
+
+@media all and (max-width:900px){
+
+	.tags-display2{
+		display:none;
+	}
+
+	.tags-display3{
+		display:block;
+		position:relative;
+	}
+
+	.tags-indicator{
+		cursor:default;
+		h2{
+			position:relative;
+			top:0;
+			margin:0;
+			padding:0;
+			transform:none;
+		}
+		&:hover{
+			h2{
+				opacity:1;
+			}
+		}
+	}
+
+}
+
+@media all and (max-width:750px){
+
+	.wrapper{
+		padding:0 9px;
+	}
+	.copyright{
+		display:none;
+	}
+	
+}
+
+@media all and (max-width: 600px){
+
+	.tags-indicator{
+		h2{
+	
+		}
+	}
+
+	.tile{
+		img{
+			-webkit-transform:none;
+			        transform:none;
+			&:hover{
+				-webkit-transform:none;
+				        transform:none;
+				@include filter(none);
+			}
+		}
+		.projectInfoWrapper{
+			display:none;
+		}
+		width:100%;
+		margin:0.5% 0;
+	}
+
+	.tags-indicator{
+		cursor:default;
+		&:hover{
+			 h2{
+		      display:block;
+		    }
+		}
+	}
+
+}
+
+@media all and (max-width:451px){
+
+		
+
+
+	.wrapper{
+		padding:0;
+	}
+
+	
 
 }

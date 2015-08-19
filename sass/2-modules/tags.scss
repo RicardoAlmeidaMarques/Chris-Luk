@@ -3,37 +3,55 @@
 	display:-webkit-flex;
 	display:-ms-flexbox;
 	display:flex;
-	-webkit-justify-content:flex-end;
-	    -ms-flex-pack:end;
-	        justify-content:flex-end;
+	height:50px;
+	border-bottom:1px solid rgba(0,0,0,0.3);
+	border-top:1px solid rgba(0,0,0,0.3);
+	.displayed-tags{
+		padding:0px 20px;
+		line-height:50px !important;
+		a{
+			color:#333;
+			padding:3px 0;
+			margin:0;
+			border-bottom:1px dashed rgba(0,0,0,0.6);
+			&:hover{
+				color:$hot-pink;
+				border-bottom:1px dashed $hot-pink;
+			}
+		}
+		span{
+			margin-right:20px;
+		}
+
+	}
 }
 
 .tagsToggle{	
-	
-	margin-right:20px;
-	height:40px;
+	position:relative;
+	margin-right:2px;
+	height:50px;
 	text-align:center;
 	padding:5px 10px;
-	border-radius:10px 10px 0 0;
 	cursor:pointer;
-
+	margin-left:auto;
+	background:none;
+	color:#333;
 	&:focus {outline:0;}
 	span{
+		@include transition(all 0.1s ease-in-out);
 		margin-right:10px;
-		font-size:0.90em;
 		&:last-child{
 			margin-right:0;
 		}
 		&.fa{
-			font-size:1.3em;
+			font-size:1.7em;
 		}
 	}
 }
 
 
 .tags{
-
-
+	border-radius:0px 0px 3px 3px;
 	.tag{
 		cursor:pointer;
 		display:-webkit-flex;
@@ -45,7 +63,6 @@
         -webkit-justify-content:flex-end;
             -ms-flex-pack:end;
                 justify-content:flex-end;
-		padding:15px 0px 15px 15px;
 		box-sizing:border-box;
 		@include user-select(none);
 		&.inactive{

@@ -1,45 +1,73 @@
-header{
-	display:-webkit-flex;
-	display:-ms-flexbox;
-	display:flex;
-	-webkit-align-items:center;
-	-ms-flex-align:center;
-	align-items:center;
-	.logo{
-		margin-right:5px;
-	}
-	.message{
-		h2{
-			font-size:0.8em;
-			font-weight:200;
-			letter-spacing:1px;
+.header{
+	background:$blue;
+	position:relative;
+	&--wrapper{
+		@include outer-container(1300px);
+		padding:0px 25px;
+		display:-webkit-flex;
+		display:-ms-flexbox;
+		display:flex;
+		-webkit-align-items:center;
+		    -ms-flex-align:center;
+		        align-items:center;
+		height:80px;
+		position:relative;
+		@media all and (max-width: 1320px){
+			padding:0px 45px;
 		}
-	}
-	nav{
-		margin-left:auto;
-		.menu{
-			display:-webkit-flex;
-			display:-ms-flexbox;
-			display:flex;
+		@media all and (max-width:750px){
+			padding:0px 10px;
+		}
 
-			li{
-				margin-right:30px;
-				&:last-child{
-					margin-right:0;
-				}
-				&.active{
-					border-bottom:2px solid $action-color;
-					a{
-						color:$action-color;
-					}
-				}
-				h2{
-					margin-bottom:5px;
+	}
+
+	&--logo{
+		font-size:2.5em;
+		color:white;
+		margin:0;
+		line-height:0.8;
+		display:inline-block;
+		cursor:pointer;
+	}
+
+	&--nav{
+		margin-left:auto;
+		&--link{
+			display:inline-block;
+			color:white;
+			cursor:pointer;
+			position:relative;
+			height:80px;
+			&:hover{
+				color:white;
+			}
+			&:focus{
+				color:white;
+			}
+			&:nth-child(1){
+				margin-right:15px;
+			}
+			h2{
+				margin:0;
+				line-height:80px;
+			}
+			&.active{
+				&::after{
+					content:'';
+					position:absolute;
+					bottom:0;
+					left:0;
+					right:0;
+					height:5px;
+					background:$hot-pink;
 				}
 			}
 		}
-
 	}
-
-
 }
+
+
+
+
+
+
